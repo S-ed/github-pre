@@ -5,10 +5,9 @@
 // @author		Mak Alexey (S-ed, Sedokun)
 // @include     http://github.com/*
 // @include     https://github.com/*
-// @version     0.150605.1
+// @version     0.150605.2
 // @grant       none
-// @licens		GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
-// @licens		Creative Commons; http://creativecommons.org/licenses/by-nc-nd/3.0/
+// @license	MIT License
 // @updateURL	https://github.com/S-ed/github-pre/raw/master/github-pre.user.js
 // @updateURL	
 // ==/UserScript==
