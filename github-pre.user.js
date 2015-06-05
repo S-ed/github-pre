@@ -2,14 +2,15 @@
 // @name        github-pre
 // @namespace   gihubpre
 // @description Switches word wrapping for comments on github.com
-// @author	Mak Alexey (S-ed, Sedokun)
+// @author		Mak Alexey (S-ed, Sedokun)
 // @include     http://github.com/*
 // @include     https://github.com/*
 // @version     0.150605.1
 // @grant       none
-// @licens	GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
-// @licens	Creative Commons; http://creativecommons.org/licenses/by-nc-nd/3.0/
+// @licens		GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
+// @licens		Creative Commons; http://creativecommons.org/licenses/by-nc-nd/3.0/
 // @updateURL	https://github.com/S-ed/github-pre/raw/master/github-pre.user.js
+// @updateURL	
 // ==/UserScript==
 
 // if Local Storage used, uncomment to reset default setting or type line in console
@@ -25,7 +26,7 @@ preCSS = '\
 	cursor: pointer;\
 	display: block;\
 	right: 0px;\
-	margin: 5px 20px 0 0;\
+	margin: 5px 35px 0 0;\
 	position: absolute;\
 	width: 16px;\
 	height: 16px;\
@@ -33,6 +34,9 @@ preCSS = '\
 	border-radius: 8px;\
 	text-align: center;\
 	transition: .5s;\
+}\
+.comment-body .preButtonDiv{\
+	margin-right: 20px\
 }\
 .preButtonDiv:hover {\
 	transition: .3s;\
@@ -71,7 +75,7 @@ function addPreButton(element){
 	var preButtonText = document.createTextNode("▾");
 	preButtonDiv.appendChild(preButtonText);
 	preButtonDiv.className = "preButtonDiv";
-	element.parentNode.insertBefore(preButtonDiv, element)
+	element.parentNode.insertBefore(preButtonDiv, element);
 	preButtonDiv.addEventListener("click", switchPreStyle, false);
 }
 
