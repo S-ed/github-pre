@@ -2,12 +2,14 @@
 // @name        github-pre
 // @namespace   gihubpre
 // @description Switches word wrapping for comments on github.com
-// @author		Mak Alexey (S-ed, Sedokun)
+// @author	Mak Alexey (S-ed, Sedokun)
 // @include     http://github.com/*
 // @include     https://github.com/*
 // @version     0.150605.1
 // @grant       none
-// @updateURL	
+// @licens	GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
+// @licens	Creative Commons; http://creativecommons.org/licenses/by-nc-nd/3.0/
+// @updateURL	https://github.com/S-ed/github-pre/raw/master/github-pre.user.js
 // ==/UserScript==
 
 // if Local Storage used, uncomment to reset default setting or type line in console
