@@ -5,7 +5,7 @@
 // @author		Mak Alexey (S-ed, Sedokun)
 // @include     http://github.com/*
 // @include     https://github.com/*
-// @version     0.150605.2
+// @version     0.150605.3
 // @grant       none
 // @license	MIT License
 // @updateURL	https://github.com/S-ed/github-pre/raw/master/github-pre.user.js
@@ -50,7 +50,7 @@ if(typeof(localStorage) !== "undefined") {
 		localStorage.setItem("wrapDefault", wrapDefault);
 	}
 } else console.log("Sorry, no Session Storage Available\n\
-Hardcoded 'wrapDefault'variable will be used instead (edit script to set)");
+Hardcoded 'wrapDefault' variable will be used instead (edit script to set)");
 
 var preStyleSheet = document.createElement("style");
 preStyleSheet.type = "text/css";
