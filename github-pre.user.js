@@ -9,7 +9,6 @@
 // @grant       none
 // @license	MIT License
 // @updateURL	https://github.com/S-ed/github-pre/raw/master/github-pre.user.js
-// @updateURL	
 // ==/UserScript==
 
 // if Local Storage used, uncomment to reset default setting or type line in console
