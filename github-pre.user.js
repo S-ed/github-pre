@@ -5,7 +5,7 @@
 // @author		Mak Alexey (S-ed, Sedokun)
 // @include     http://github.com/*
 // @include     https://github.com/*
-// @version     0.150606.1
+// @version     0.150606.2
 // @grant       none
 // @license		MIT License
 // @updateURL	https://github.com/S-ed/github-pre/raw/master/github-pre.user.js
@@ -49,7 +49,7 @@ if(typeof(localStorage) !== "undefined") {
 		} else wrapDefault = false;
 		localStorage.setItem("wrapDefault", wrapDefault);
 	}
-} else alert("Sorry, no Local Storage Available\n\
+} else console.warn("Sorry, no Local Storage Available\n\
 Hardcoded 'wrapDefault' variable will be used instead (edit script to set)");
 
 var preStyleSheet = document.createElement("style");
