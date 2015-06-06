@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name        github-pre
+// @name        Github Word Wrapping for CODE blocks
 // @namespace   gihubpre
-// @description Switches word wrapping for comments on github.com
+// @description Switches word wrapping for CODE blocks in comments on github.com
 // @author		Mak Alexey (S-ed, Sedokun)
 // @include     http://github.com/*
 // @include     https://github.com/*
-// @version     0.150606.2
+// @version     0.150606.3
 // @grant       none
 // @license		MIT License
 // @updateURL	https://github.com/S-ed/github-pre/raw/master/github-pre.user.js
