@@ -1,4 +1,4 @@
-# github-pre
+# Github Word Wrapping for CODE blocks
 Userscript for github that adds a button to switch word wrapping for code in comments.
 
 ![Example usage](https://cloud.githubusercontent.com/assets/3008353/8000621/f215e8b2-0b65-11e5-89da-45bff12229cf.gif)
