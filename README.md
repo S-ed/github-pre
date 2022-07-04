@@ -19,3 +19,13 @@ command may be used to reset the value.
 ```
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 ```
+
+
+# Changelog
+v.1.220705.1
+
+Added `fetch` interceptor to handle navigation events.
+
+Moved arrow button to top left to not interfere with Copy button.
+
+Arrow button now has a state to show if the content is folded or not.
