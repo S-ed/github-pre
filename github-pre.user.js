@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name        Github Word Wrapping for CODE blocks
-// @namespace   gihubpre
-// @description Switches word wrapping for CODE blocks in comments on github.com
-// @author	Mak Alexey (S-ed, Sedokun)
+// @name	Github Word Wrapping for CODE blocks
+// @namespace	gihubpre
 // @run-at	document-start
+// @description	Switches word wrapping for CODE blocks in comments on github.com
+// @author	Mak Alexey (S-ed, Sedokun)
 // @match	http://github.com/*
 // @match	https://github.com/*
-// @version	1.220704.1
+// @version	1.220705.1
 // @grant	none
 // @license	MIT License
 // @downloadURL	https://github.com/S-ed/github-pre/raw/master/github-pre.user.js
@@ -53,15 +53,36 @@ if(typeof(localStorage) !== "undefined") {
 } else { console.warn( "Sorry, no Local Storage Available\n\
 Hardcoded 'wrapDefault' variable will be used instead (edit script to set)" ); }
 
+
+//Intercepting fetch to trigger DOM parse on navigation events
+const { fetch: originalFetch } = window;
+window.fetch = async (...args) => {
+  let [resource, config] = args;
+
+  let response = await originalFetch(resource, config);
+
+  initGithubPre();
+
+  return response;
+};
+
+
 var preStyleSheet = document.createElement("style");
 preStyleSheet.type = "text/css";
 preStyleSheet.appendChild(document.createTextNode(preCSS));
 document.head.appendChild(preStyleSheet);
 
-document.addEventListener("DOMContentLoaded", initGithubPre);
+//Trigger once on page load
+document.addEventListener("DOMContentLoaded", initGithubPreDOM());
 
+function initGithubPreDOM(){
+    document.removeEventListener("DOMContentLoaded", initGithubPreDOM);
+    initGithubPre();
+    console.warn( "waka");
+}
+
+//Parse the page, find all code containers change the wrap, and add swith buttons
 function initGithubPre(){
-	document.removeEventListener("DOMContentLoaded", initGithubPre);
 	var preCollection = document.querySelectorAll(".markdown-body pre");
 	for (var i = 0; i < preCollection.length; ++i) {
 		addPreButton(preCollection[i]);
@@ -69,6 +90,8 @@ function initGithubPre(){
 	}
 }
 
+
+//Function to embed button switches in each code container
 function addPreButton(element){
 	var preButtonDiv = document.createElement("div");
 	var preButtonText = document.createTextNode("▾");
@@ -78,8 +101,9 @@ function addPreButton(element){
 	preButtonDiv.addEventListener("click", switchPreStyle, false);
 }
 
+//Function to handle Click events
 function switchPreStyle(){
 	var pre = this.nextSibling.firstChild.style;
 	pre.whiteSpace = (pre.whiteSpace != "pre-wrap")?"pre-wrap":"pre";
-	this.style.transform = (this.style.transform != "rotate(-90deg)")?"rotate(-90deg)":"";
+    this.style.transform = (this.style.transform != "rotate(-90deg)")?"rotate(-90deg)":"";
 }
