@@ -85,7 +85,7 @@ function initGithubPreDOM(){
 function initGithubPre(){
 	var preCollection = document.querySelectorAll(".markdown-body pre");
 	for (var i = 0; i < preCollection.length; ++i) {
-		addPreButton(preCollection[i]);
+		if( !preCollection[i].parentNode.firstChild.classList.contains('preButtonDiv') ) addPreButton(preCollection[i]);
 		if (wrapDefault) preCollection[i].firstChild.style.whiteSpace = "pre-wrap";
 	}
 }
